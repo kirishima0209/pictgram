@@ -4,4 +4,6 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8, maximum: 32 }, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]+\z/i }
 
    has_secure_password
+   
+   has_many :topics
 end
