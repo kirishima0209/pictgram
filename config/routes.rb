@@ -10,12 +10,11 @@ Rails.application.routes.draw do
   resources :users
   resources :topics do 
     resources :comments
-  end  
+  end
   
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
-
-
+  delete '/favorites', to: 'favorites#destroy'
 
   get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'
